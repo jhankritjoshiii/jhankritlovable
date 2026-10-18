@@ -19,10 +19,10 @@ function Stores() {
     scoped.forEach((r) => {
       const k = `${r.store_id} · ${r.store_location}`;
       const o = m.get(k) ?? { store: k, revenue: 0, quantity: 0 };
-      o.revenue = (o.revenue as number) + r.revenue; o.quantity = (o.quantity as number) + r.quantity_sold;
+      o["revenue"] = (o["revenue"] as number) + r.revenue; o["quantity"] = (o["quantity"] as number) + r.quantity_sold;
       o[r.category] = ((o[r.category] as number) ?? 0) + r.revenue; m.set(k, o);
     });
-    const stores = [...m.values()].sort((a, b) => String(a.store).localeCompare(String(b.store)));
+    const stores = [...m.values()].sort((a, b) => String(a["store"]).localeCompare(String(b["store"])));
     // Heatmap: average daily revenue by weekday × month
     const daily = dailySeries(scoped);
     const grid = DAYS.map(() => MONTHS.map(() => ({ s: 0, n: 0 })));
