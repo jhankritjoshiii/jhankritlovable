@@ -47,8 +47,8 @@ function Forecast() {
             <Tooltip {...tooltipStyle} formatter={(v: number) => inr(v)} />
             <Legend wrapperStyle={{ fontSize: 11 }} />
             <ReferenceLine x={lastDate} stroke="var(--muted-foreground)" strokeDasharray="2 2" label={{ value: "Forecast origin", fontSize: 10, fill: "var(--muted-foreground)" }} />
-            <Line dataKey="actual" name="Observed" stroke="var(--chart-1)" strokeWidth={2} dot={false} />
-            <Line dataKey="forecast" name="Predicted" stroke="var(--forecast)" strokeWidth={2.5} strokeDasharray="6 4" dot={{ r: 3 }} />
+            <Line isAnimationActive={false} dataKey="actual" name="Observed" stroke="var(--chart-1)" strokeWidth={2} dot={false} />
+            <Line isAnimationActive={false} dataKey="forecast" name="Predicted" stroke="var(--forecast)" strokeWidth={2.5} strokeDasharray="6 4" dot={{ r: 3 }} />
           </LineChart>
         </ResponsiveContainer>
       </Panel>
@@ -67,9 +67,9 @@ function Forecast() {
               <YAxis {...axisProps} tickFormatter={inr} width={70} />
               <Tooltip {...tooltipStyle} formatter={(v: number) => inr(v)} />
               <Legend wrapperStyle={{ fontSize: 11 }} />
-              <Line dataKey="actual" name="Actual" stroke="var(--chart-1)" strokeWidth={2} dot={false} />
-              <Line dataKey="model" name="Ridge model" stroke="var(--forecast)" strokeWidth={2} dot={false} />
-              <Line dataKey="baseline" name="Seasonal-naive" stroke="var(--chart-7)" strokeDasharray="3 3" dot={false} />
+              <Line isAnimationActive={false} dataKey="actual" name="Actual" stroke="var(--chart-1)" strokeWidth={2} dot={false} />
+              <Line isAnimationActive={false} dataKey="model" name="Ridge model" stroke="var(--forecast)" strokeWidth={2} dot={false} />
+              <Line isAnimationActive={false} dataKey="baseline" name="Seasonal-naive" stroke="var(--chart-7)" strokeDasharray="3 3" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </Panel>

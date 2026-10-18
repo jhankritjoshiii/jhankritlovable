@@ -42,7 +42,7 @@ function Overview() {
               <XAxis dataKey="week" {...axisProps} minTickGap={40} />
               <YAxis {...axisProps} tickFormatter={inr} width={70} />
               <Tooltip {...tooltipStyle} formatter={(v: number) => inr(v)} labelFormatter={(l) => `Week from ${l}`} />
-              <Area dataKey="revenue" name="Revenue" stroke="var(--chart-1)" fill="url(#g1)" strokeWidth={2} />
+              <Area isAnimationActive={false} dataKey="revenue" name="Revenue" stroke="var(--chart-1)" fill="url(#g1)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
         </Panel>
