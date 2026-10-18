@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- tsconfig has noUncheckedIndexedAccess off: forecasting/aggregation code is dense numeric array indexing with bounds guaranteed by loop ranges.
